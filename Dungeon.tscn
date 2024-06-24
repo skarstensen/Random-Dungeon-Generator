@@ -19,7 +19,7 @@ tile_set = SubResource("TileSet_iof7l")
 format = 2
 script = ExtResource("2_tk4xp")
 mapWidth = 20
-mapHeight = 15
+mapHeight = 20
 minRoomSize = 3
 
 [node name="Control" type="MarginContainer" parent="."]

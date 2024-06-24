@@ -17,6 +17,10 @@ var rng = RandomNumberGenerator.new()
 var mapWidth
 var mapHeight
 
+func _ready():
+	rng.randomize()
+
+
 func generate(map:TileMap, w:int, h:int, minRoomSize, maxRoomSize):
 	
 	var potentialRooms:int = (w / maxRoomSize) * (h / maxRoomSize)
@@ -33,15 +37,13 @@ func generate(map:TileMap, w:int, h:int, minRoomSize, maxRoomSize):
 	
 	mapWidth = w
 	mapHeight = h
-	
-	rng.randomize()
 
 	# Fill map with solid tiles, adding a "border" of solid tiles around the map
 	# out of bounds.
 	for r in range(-1, h + 1):
 		for c in range (-1, w + 1):
 			map.set_cell(0, Vector2i(c, r), 0, Vector2i(Tiles.SOLID, 0))
-	pass
+	
 	# Generate potential rooms.
 	for r in potentialRooms:
 		position = Vector2(rng.randi_range(1, w - maxRoomSize), rng.randi_range(1, h - maxRoomSize))
