@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bprf478og57bo"]
+
+[ext_resource type="Texture2D" uid="uid://cbm823o10cebv" path="res://assets/64x64 tiles.png" id="1_fpkc7"]
+[ext_resource type="Script" path="res://Dungeon.gd" id="2_tk4xp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_655qv"]
+resource_name = "Default"
+texture = ExtResource("1_fpkc7")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_iof7l"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_655qv")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_iof7l")
+format = 2
+script = ExtResource("2_tk4xp")
+mapWidth = 20
+mapHeight = 15
+minRoomSize = 3
+
+[node name="Control" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Generate"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
