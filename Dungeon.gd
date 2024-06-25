@@ -10,6 +10,5 @@ func _ready():
 	DungeonGenerator.generate(self, mapWidth, mapHeight, minRoomSize, maxRoomSize)
 
 
-
 func _on_button_pressed():
 	DungeonGenerator.generate(self, mapWidth, mapHeight, minRoomSize, maxRoomSize)

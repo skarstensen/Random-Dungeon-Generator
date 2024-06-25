@@ -18,8 +18,8 @@ sources/0 = SubResource("TileSetAtlasSource_655qv")
 tile_set = SubResource("TileSet_iof7l")
 format = 2
 script = ExtResource("2_tk4xp")
-mapWidth = 20
-mapHeight = 20
+mapWidth = 15
+mapHeight = 15
 minRoomSize = 3
 
 [node name="Control" type="MarginContainer" parent="."]

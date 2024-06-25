@@ -2,9 +2,6 @@ extends Node
 
 enum Tiles { EMPTY, SOLID }
 
-const MIN_CONTAINERS:int = 2
-const MAX_CONTAINERS:int = 5
-
 class Room:
 	var position:Vector2
 	var dimensions:Vector2
